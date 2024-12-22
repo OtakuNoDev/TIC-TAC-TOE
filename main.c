@@ -1,3 +1,7 @@
+/* Author : Shreyash & Gaurav
+   Date : 22/12/2024 
+   Program to play Tic-Tac-Toe game
+ */
 #include<stdio.h>
 char board[3][3]=
 {
@@ -5,7 +9,7 @@ char board[3][3]=
     {'4','5','6'},
     {'7','8','9'}
 };
-
+ //Function portotype declared here 
 void display_board();
 int checkWin();
 void make_move(char player);
@@ -26,14 +30,13 @@ int main()
             printf("Player %c wins!\n", currentPlayer);
             return 0;
         }
-
         currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
     }
-
     printf("It's a draw!\n");
     return 0;
 }
 
+//Code for the Tic-Tac-Toe pattern
 void display_board() 
 {
     printf("\n");
@@ -70,19 +73,22 @@ void make_move(char player)
     }
 }
 
+//Code for winning conditions
 int checkWin() 
 {
     for (int i = 0; i < 3; i++) 
     {
         if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
-            return 1; // Row match
+            return 1; // Condition for matching row
+            
         if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
-            return 1; // Column match
+            return 1; // Condition for matching column
     }
-    if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
-        return 1; // Diagonal match
-    if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
-        return 1; // opposite diagonal match
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+        return 1; // Condition for matching diagonal
+        
+        if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+        return 1; // Condition for opposite matching diagonal
 
-    return 0; // No win
+    return 0; // Condition for no win
 }
