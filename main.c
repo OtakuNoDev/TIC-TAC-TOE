@@ -9,7 +9,7 @@ char board[3][3]=
     {'4','5','6'},
     {'7','8','9'}
 };
- //Function portotype declared here 
+ //Function prototype declared here 
 void display_board();
 int checkWin();
 void make_move(char player);
@@ -36,7 +36,7 @@ int main()
     return 0;
 }
 
-//Code for the Tic-Tac-Toe pattern
+//Code for the Tic-Tac-Toe board pattern
 void display_board() 
 {
     printf("\n");
